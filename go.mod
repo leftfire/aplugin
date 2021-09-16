@@ -1,4 +1,4 @@
-module aplugin
+module github.com/leftfire/aplugin
 
 go 1.17
 

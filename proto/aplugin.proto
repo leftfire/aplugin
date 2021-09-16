@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+// import "google/protobuf/any.proto";
+
+option go_package=".;proto";
+
+package proto;
+
+
+
+
+
+message Response {
+    bytes data=1;
+}
+
+
+
+message FuncReq {
+    string funcName = 1;
+    map<string, string> config = 2;
+
+}
+message FuncResp {
+    bytes data = 1;
+}
+
+
+service ITS {
+    rpc UseStremFunc (FuncReq) returns (stream Response);  //
+    rpc UseFunc(FuncReq) returns(FuncResp);
+    
+}
+

@@ -6,7 +6,7 @@ import (
 	"github.com/hashicorp/go-plugin"
 )
 
-var handshakeConfig = plugin.HandshakeConfig{
+var HandshakeConfig = plugin.HandshakeConfig{
 	ProtocolVersion:  1,
 	MagicCookieKey:   "BASIC_PLUGIN",
 	MagicCookieValue: "hello",

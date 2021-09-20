@@ -4,6 +4,7 @@ import (
 	"net/rpc"
 
 	"github.com/hashicorp/go-plugin"
+	"gorm.io/gorm"
 )
 
 var HandshakeConfig = plugin.HandshakeConfig{
@@ -19,6 +20,7 @@ type Arpc interface {
 type Req struct {
 	FuncName string
 	Args     map[string]string
+	DB       *gorm.DB
 }
 
 type Resp struct {

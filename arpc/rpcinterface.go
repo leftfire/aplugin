@@ -66,7 +66,7 @@ type ArpcPlugin struct {
 }
 
 func (p *ArpcPlugin) Server(*plugin.MuxBroker) (interface{}, error) {
-	return &ArpcPlugin{Impl: p.Impl}, nil
+	return &ArpcRPCServer{Impl: p.Impl}, nil
 }
 
 func (p *ArpcPlugin) Client(b *plugin.MuxBroker, c *rpc.Client) (interface{}, error) {

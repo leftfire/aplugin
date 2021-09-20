@@ -14,7 +14,7 @@ var HandshakeConfig = plugin.HandshakeConfig{
 }
 
 type Arpc interface {
-	UseFunc(Req, *Resp) error
+	UseFunc(req Req, resp *Resp) error
 }
 
 type Req struct {

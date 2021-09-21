@@ -22,13 +22,13 @@ type Arpc interface {
 type Req struct {
 	FuncName string
 	Args     map[string]string
-	DB       *gorm.DB
 }
 
 //返回对象
 type Resp struct {
 	Code string
 	Data string
+	DB   *gorm.DB
 }
 
 //client

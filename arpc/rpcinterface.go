@@ -36,7 +36,7 @@ type ArpcClient struct {
 }
 
 func (a *ArpcClient) UseFunc(req Req, resp *Resp) error {
-	err := a.client.Call("arpc.UseFunc", req, resp)
+	err := a.client.Call("Plugin.UseFunc", req, resp)
 	if err != nil {
 		// You usually want your interfaces to return errors. If they don't,
 		// there isn't much other choice here.

@@ -13,16 +13,19 @@ var HandshakeConfig = plugin.HandshakeConfig{
 	MagicCookieValue: "hello",
 }
 
+//对外的接口   返回到resp
 type Arpc interface {
 	UseFunc(req Req, resp *Resp) error
 }
 
+//请求对象
 type Req struct {
 	FuncName string
 	Args     map[string]string
 	DB       *gorm.DB
 }
 
+//返回对象
 type Resp struct {
 	Code string
 	Data string
@@ -34,7 +37,7 @@ type ArpcClient struct {
 }
 
 func (a *ArpcClient) UseFunc(req Req, resp *Resp) error {
-	err := a.client.Call("arpc.UseFunc", new(interface{}), resp)
+	err := a.client.Call("arpc.UseFunc", req, resp)
 	if err != nil {
 		// You usually want your interfaces to return errors. If they don't,
 		// there isn't much other choice here.

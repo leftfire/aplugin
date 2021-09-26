@@ -19,9 +19,12 @@ type Arpc interface {
 
 //请求对象
 type Req struct {
+	//方法名
 	FuncName string
-	Args     map[string]string
-	Para     interface{}
+	//插件配置
+	Config map[string]string
+	//请求参数
+	Para map[string]string
 }
 
 //返回对象
